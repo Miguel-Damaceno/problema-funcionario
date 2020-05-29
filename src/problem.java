@@ -35,6 +35,32 @@ public class problem {
 		System.out.printf("Digitar outro (S/N)? ");
 		digitar = sc.next().charAt(0);
 		
+		while (digitar == 's' || digitar == 'S') {
+			System.out.printf("Nome: ");
+			nome = sc.next();
+			
+			System.out.printf("Horas trabalhadas: ");
+			horatrab = sc.nextDouble();
+			
+			while (horatrab < 0) {
+				System.out.println("Valor invalido");
+				System.out.printf("Horas trabalhadas: ");
+				horatrab = sc.nextDouble();
+			}
+			
+			System.out.printf("Valor por hora: ");
+			valorhora = sc.nextDouble();
+			
+			while (valorhora < 0) {
+				System.out.println("Valor invalido");
+				System.out.printf("Valor por hora: ");
+				valorhora = sc.nextDouble();
+			}
+			System.out.printf("Digitar outro (S/N)? ");
+			digitar = sc.next().charAt(0);
+			
+		}
+		
 		/* Impressão do menu */
 		System.out.println("");
 		System.out.println("MENU");
@@ -57,7 +83,7 @@ public class problem {
 			opcao = sc.nextInt();
 		}
 		
-	
+		
 		
 		sc.close();
 	}
