@@ -8,7 +8,7 @@ public class problem {
 		Scanner sc = new Scanner(System.in);
 		
 		String nome;
-		double horatrab, valorhora;
+		double horatrab, valorhora, horatotal=0, custototal=0;
 		char digitar;
 		
 		System.out.printf("Nome: ");
@@ -22,7 +22,8 @@ public class problem {
 			System.out.printf("Horas trabalhadas: ");
 			horatrab = sc.nextDouble();
 		}
-		
+		horatotal = horatrab + horatotal;
+	
 		System.out.printf("Valor por hora: ");
 		valorhora = sc.nextDouble();
 		
@@ -31,6 +32,7 @@ public class problem {
 			System.out.printf("Valor por hora: ");
 			valorhora = sc.nextDouble();
 		}
+		custototal = (valorhora * horatrab) + custototal;
 		
 		System.out.printf("Digitar outro (S/N)? ");
 		digitar = sc.next().charAt(0);
@@ -47,6 +49,7 @@ public class problem {
 				System.out.printf("Horas trabalhadas: ");
 				horatrab = sc.nextDouble();
 			}
+			horatotal = horatrab + horatotal;
 			
 			System.out.printf("Valor por hora: ");
 			valorhora = sc.nextDouble();
@@ -56,6 +59,8 @@ public class problem {
 				System.out.printf("Valor por hora: ");
 				valorhora = sc.nextDouble();
 			}
+			custototal = (valorhora * horatrab) + custototal;
+			
 			System.out.printf("Digitar outro (S/N)? ");
 			digitar = sc.next().charAt(0);
 			
@@ -73,7 +78,20 @@ public class problem {
 		int opcao;
 		opcao = sc.nextInt();
 		
+		
+		/* Tratativas 1/2 */
 		while (opcao != 4) {
+			if (opcao == 1) {
+				System.out.println("");
+				System.out.println("Total de horas = " + horatotal);
+				System.out.println("");
+			}
+			else if (opcao == 2) {
+				System.out.println("");
+				System.out.printf("Custo total = R$ %.2f%n", custototal);
+				System.out.println("");
+			}
+			
 			System.out.println("MENU");
 			System.out.println("1 - Total de horas trabalhadas");
 			System.out.println("2 - Custo total");
@@ -81,8 +99,8 @@ public class problem {
 			System.out.println("4 - Sair");
 			System.out.println("Digite uma opção: ");
 			opcao = sc.nextInt();
+			
 		}
-		
 		
 		
 		sc.close();
