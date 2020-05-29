@@ -7,8 +7,8 @@ public class problem {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		String nome;
-		double horatrab, valorhora, horatotal=0, custototal=0;
+		String nome, ganhador;
+		double horatrab, valorhora, horatotal=0, custototal=0, custofunc;
 		char digitar;
 		
 		System.out.printf("Nome: ");
@@ -32,7 +32,9 @@ public class problem {
 			System.out.printf("Valor por hora: ");
 			valorhora = sc.nextDouble();
 		}
+		custofunc = valorhora * horatrab;
 		custototal = (valorhora * horatrab) + custototal;
+		ganhador = nome;
 		
 		System.out.printf("Digitar outro (S/N)? ");
 		digitar = sc.next().charAt(0);
@@ -59,6 +61,7 @@ public class problem {
 				System.out.printf("Valor por hora: ");
 				valorhora = sc.nextDouble();
 			}
+			custofunc = valorhora * horatrab;
 			custototal = (valorhora * horatrab) + custototal;
 			
 			System.out.printf("Digitar outro (S/N)? ");
@@ -79,7 +82,6 @@ public class problem {
 		opcao = sc.nextInt();
 		
 		
-		/* Tratativas 1/2 */
 		while (opcao != 4) {
 			if (opcao == 1) {
 				System.out.println("");
@@ -91,7 +93,13 @@ public class problem {
 				System.out.printf("Custo total = R$ %.2f%n", custototal);
 				System.out.println("");
 			}
-			
+			else if (opcao == 3) {
+				System.out.println("");
+				System.out.printf("Pessoa que ganhou mais: ", ganhador);
+				System.out.println("");
+				
+			}
+			System.out.println("");
 			System.out.println("MENU");
 			System.out.println("1 - Total de horas trabalhadas");
 			System.out.println("2 - Custo total");
@@ -102,6 +110,8 @@ public class problem {
 			
 		}
 		
+		System.out.println("");
+		System.out.println("FIM DO PROGRAMA!");
 		
 		sc.close();
 	}
